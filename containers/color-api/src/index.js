@@ -41,6 +41,10 @@ app.get('/ready', (req, res) => {
   return res.send('ok');
 });
 
+app.get('/up', (req, res) => {
+  return res.send('ok');
+});
+
 app.get('/health', (req, res) => {
   if (fail_liveness) {
     return res.sendStatus(503);
