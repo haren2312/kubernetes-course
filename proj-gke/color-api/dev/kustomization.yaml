@@ -5,3 +5,6 @@ namespace: dev
 
 resources:
   - ../_base
+
+patches:
+  - path: use-dev-image.yaml
