@@ -4,7 +4,5 @@ kind: Kustomization
 resources:
   - color-api.yaml
   - color-svc.yaml
+  - ./network-policies/allow-external.yaml
 
-commonLabels:
-  app: color-api
-  project: proj-gke
