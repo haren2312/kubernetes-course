@@ -1,6 +1,7 @@
 # Pod Security Standards Implementation Guide
 
 ## Overview
+
 In this session, we will delve into the implementation of pod security standards in Kubernetes. By the end of this exercise, you should be able to create namespaces, define security contexts, and enforce various security levels for your pods.
 
 Here’s a quick overview of the steps you can try on your own before diving into the detailed guide:
@@ -20,22 +21,27 @@ Give it a shot! 🚀 Try implementing these steps on your own first. Once you fe
 1. **Create a New Folder**: Start by creating a new folder (e.g., `namespaces`) in your IDE to keep your work organized.
 
 2. **Define Namespaces**:
+
    - Inside your folder, create YAML files for the `privileged` and `baseline` namespaces.
    - Set the API version, kind, and metadata with appropriate labels for security enforcement.
 
 3. **Label Your Namespaces**:
+
    - In the `privileged` namespace, line up the security label to enforce privileged options.
    - In the `baseline` namespace, set warnings for the baseline security standard violations.
 
 4. **Create Pod Definitions**:
+
    - Create a YAML file for each pod, using an image like `nginx:1.27.0`.
-   - For the `privileged` pod, include a security context with `privileged` set to true. 
+   - For the `privileged` pod, include a security context with `privileged` set to true.
 
 5. **Handle the Baseline Pod**:
+
    - In the `baseline` pod definition, do not set a security context for privileges initially.
    - Attempt to deploy the `baseline` pod and observe any warnings or errors.
 
 6. **Adjust for Violations**:
+
    - Modify the `baseline` pod to enforce required security contexts (e.g., disable privilege escalations, etc.) based on warnings received during deployment.
 
 7. **Testing**: Deploy both pods and verify their statuses in their respective namespaces using the `kubectl get pods` command.
@@ -43,7 +49,5 @@ Give it a shot! 🚀 Try implementing these steps on your own first. Once you fe
 8. **Cleanup**: Once done, delete the pods and namespaces you've created to keep things tidy.
 
 ## Conclusion
-In this session, we've explored the implementation of pod security standards in Kubernetes by creating and managing namespaces and enforcing security policies. By practicing these configurations, you'll enhance your understanding of Kubernetes security practices. Keep experimenting and pushing the limits of your Kubernetes knowledge! 🌟
 
-## Lecture Description
-This lecture focuses on implementing pod security standards in Kubernetes. It guides learners through the process of creating namespaces, setting up security contexts, and deploying pods while adhering to various security levels. By the end of the session, participants will have practical experience in enforcing security standards in their Kubernetes clusters.
+In this session, we've explored the implementation of pod security standards in Kubernetes by creating and managing namespaces and enforcing security policies. By practicing these configurations, you'll enhance your understanding of Kubernetes security practices. Keep experimenting and pushing the limits of your Kubernetes knowledge! 🌟

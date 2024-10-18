@@ -16,19 +16,20 @@ We encourage you to try implementing these steps yourself before checking the de
 
 1. **SSH into MiniKube**:
    - Access your MiniKube environment.
-   
 2. **Create Directories**:
    - Inside your `mount` directory, create three folders: `ss-0`, `ss-1`, and `ss-2`.
-   
 3. **Set Permissions**:
+
    - Change the permissions of these directories to `777` to ensure they are writable.
 
 4. **Create Persistent Volume YAML**:
+
    - Open your preferred IDE and create a new directory named `stateful_sets`.
    - In this directory, create a file called `PVs.yaml` to define your persistent volumes.
    - Copy and paste the necessary configuration from a local volume example, modifying the names to `stateful set zero`, `stateful set one`, and `stateful set two`, respectively.
 
 5. **Apply Persistent Volumes**:
+
    - Use the command `kubectl apply -f PVs.yaml` in the terminal to create the persistent volumes.
    - Verify that all persistent volumes are in the "available" status.
 
@@ -37,8 +38,4 @@ We encourage you to try implementing these steps yourself before checking the de
 
 ## Conclusion
 
-In this session, we explored how to create Persistent Volumes and set up Stateful Sets in Kubernetes. These concepts are crucial for managing stateful applications effectively, providing stable identities and storage for your Pods. Keep practicing these techniques, as mastering them will greatly enhance your Kubernetes skills. Happy coding! 🚀 
-
-## Lecture Description
-
-In this lecture, we focus on the fundamentals of Stateful Sets in Kubernetes, specifically how they can be used to create and manage stateful applications with guaranteed stable identities and persistent storage. The content is designed to guide you through setting up Persistent Volumes and Stateful Sets, ensuring a solid understanding of these key concepts in container orchestration.
+In this session, we explored how to create Persistent Volumes and set up Stateful Sets in Kubernetes. These concepts are crucial for managing stateful applications effectively, providing stable identities and storage for your Pods. Keep practicing these techniques, as mastering them will greatly enhance your Kubernetes skills. Happy coding! 🚀

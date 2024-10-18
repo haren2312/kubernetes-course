@@ -70,7 +70,3 @@ I encourage you to try implementing these steps on your own before proceeding to
 ## Conclusion
 
 In this session, we explored how to create and manage Pods in Kubernetes using labels and selectors. Remember that using labels effectively can help you maintain a clean and organized cluster, especially as it scales. Keep practicing these concepts, and you'll find them becoming second nature as you continue your Kubernetes journey! 🚀
-
-## Lecture Description
-
-In this lecture, we focus on the practical implementation of labels and selectors in Kubernetes. Students learn to define Pods with specific labels, apply configurations, retrieve Pods using `kubectl`, and filter results based on various label selectors, aiding in better resource management within clusters.

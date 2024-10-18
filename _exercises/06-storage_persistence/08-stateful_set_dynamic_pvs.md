@@ -1,6 +1,7 @@
 # Implementing Dynamic Persistent Volumes in Stateful Sets
 
 ## Overview
+
 In this exercise, we’re going to explore how to transition from statically provisioned persistent volumes to dynamically provisioned persistent volumes using Kubernetes Stateful Sets. You'll be able to modify your existing stateful set configuration to utilize dynamic provisioning, allowing Kubernetes to automatically manage the underlying storage resources for you. 📦
 
 Before diving into the step-by-step guide, here’s a brief summary of the main steps you will try to implement:
@@ -14,6 +15,7 @@ Before diving into the step-by-step guide, here’s a brief summary of the main 
 Take a moment to try these steps on your own before looking at the detailed guide below. Let's see what you can come up with!
 
 ## Step-by-Step Guide
+
 1. **Open your stateful set file**: Locate the configuration file used to create your stateful set.
 2. **Update the storage class**: Change the existing storage class line to use the name `standard`, or comment it out if it’s currently present.
 3. **Apply the changes**: Navigate to the folder containing your stateful set and apply the updated configuration using the command:
@@ -42,7 +44,5 @@ Take a moment to try these steps on your own before looking at the detailed guid
    ```
 
 ## Conclusion
-By following these steps, you've successfully migrated your stateful set to utilize dynamically provisioned persistent volumes. This transition ensures that Kubernetes effectively manages storage resources, making your applications more flexible and resilient. Keep practicing these concepts, as they are foundational to effectively managing stateful applications in Kubernetes. If you have any questions or run into issues, don’t hesitate to reach out for help as you continue your learning journey! 🙌
 
-## Lecture Description
-In this lecture, we delve into the process of transitioning from statically provisioned persistent volumes to dynamically provisioned persistent volumes using Kubernetes Stateful Sets. We cover modifying configuration files, understanding persistent volume claims and their management, as well as the implications of deleting stateful sets on stored data. This hands-on exploration equips participants with the necessary skills to manage stateful applications in Kubernetes effectively.
+By following these steps, you've successfully migrated your stateful set to utilize dynamically provisioned persistent volumes. This transition ensures that Kubernetes effectively manages storage resources, making your applications more flexible and resilient. Keep practicing these concepts, as they are foundational to effectively managing stateful applications in Kubernetes. If you have any questions or run into issues, don’t hesitate to reach out for help as you continue your learning journey! 🙌

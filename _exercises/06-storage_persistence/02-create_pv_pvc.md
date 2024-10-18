@@ -1,6 +1,7 @@
 # Creating Persistent Volumes and Claims in Kubernetes
 
 ## Overview
+
 In this exercise, we will explore the concept of Persistent Volumes (PV) and Persistent Volume Claims (PVC) using local storage in Kubernetes. The primary goal is to understand how to create a persistent volume, define a persistent volume claim, and incorporate them into pods. Before diving into the step-by-step instructions, give it a try yourself! Here’s a quick overview of the main steps you'll need to implement:
 
 1. Begin with a clean Kubernetes namespace.
@@ -14,9 +15,11 @@ Take your time and try to implement these steps on your own before looking at th
 ## Step-by-Step Guide
 
 ### 1. Prepare Your Environment
+
 - Make sure there are no resources in your default namespace by checking the current pods.
 
 ### 2. Create the Persistent Volume (PV)
+
 - Create a new YAML file named `local-volume-example.yaml`.
 - Specify the following parameters in the PV definition:
   - **apiVersion**: v1
@@ -30,6 +33,7 @@ Take your time and try to implement these steps on your own before looking at th
     - Add the `local` attribute with the desired mount path (ensure the path exists on the node).
 
 ### 3. Apply the Persistent Volume
+
 - Apply the PV file using the command:
   ```bash
   kubectl apply -f local-volume-example.yaml
@@ -41,6 +45,7 @@ Take your time and try to implement these steps on your own before looking at th
 - If there are errors, verify the mount path and correct them.
 
 ### 4. Create the Persistent Volume Claim (PVC)
+
 - In the same directory, create a new YAML file named `local-volume-claim.yaml`.
 - Specify:
   - **apiVersion**: v1
@@ -52,6 +57,7 @@ Take your time and try to implement these steps on your own before looking at th
     - `storageClassName`: Set it as `local-storage`.
 
 ### 5. Apply the Persistent Volume Claim
+
 - Apply the PVC file using:
   ```bash
   kubectl apply -f local-volume-claim.yaml
@@ -61,14 +67,13 @@ Take your time and try to implement these steps on your own before looking at th
   kubectl get pvc
   ```
 
-### 6. Verify Binding 
+### 6. Verify Binding
+
 - If bound successfully, check the details of the PVC and PV to ensure they are linked. Use:
   ```bash
   kubectl describe pvc local-volume-claim
   ```
 
 ## Conclusion
-Congratulations! You've successfully created a Persistent Volume and a Persistent Volume Claim. This exercise helped you grasp how to manage storage in Kubernetes by defining volumes that can be persistently accessed by your pods. Remember that the relationship between PV and PVC is crucial, and understanding how they interact will enhance your Kubernetes skills. Keep practicing, and don't hesitate to explore more complex configurations! 🚀
 
-## Lecture Description
-In this lecture, we explore Persistent Volumes and Persistent Volume Claims in Kubernetes, focusing on local storage. The goals include understanding the creation of PVs and PVCs, recognizing potential errors, and ensuring successful binding for storage management within pods.
+Congratulations! You've successfully created a Persistent Volume and a Persistent Volume Claim. This exercise helped you grasp how to manage storage in Kubernetes by defining volumes that can be persistently accessed by your pods. Remember that the relationship between PV and PVC is crucial, and understanding how they interact will enhance your Kubernetes skills. Keep practicing, and don't hesitate to explore more complex configurations! 🚀

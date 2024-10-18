@@ -3,6 +3,7 @@
 Welcome! In this session, we’ll extend our Color API with some practical endpoints to manage startup, readiness, and liveness probes. This will make it easier for us to control the behavior of these probes using environment variables. Let’s dive into what you’ll aim to implement! 🙌
 
 ## Overview
+
 In this exercise, you will enhance the Color API by adding functionality for startup, liveness, and readiness probes. Below are the main steps you'll want to follow. Before checking the step-by-step guide, give it a shot on your own:
 
 1. **Create Environment Variables**: Set up environment variables that control the behavior of the startup, liveness, and readiness probes.
@@ -17,17 +18,19 @@ Before moving on, take a moment to implement these steps on your own. It's a gre
 
 1. **Set Environment Variables**:
    - Create variables like `fail_startup`, `fail_liveness`, and `fail_readiness` in your environment configuration.
-   
 2. **Update Logic for Probes**:
+
    - In your Color API, modify the logic to check these environment variables when determining probe results.
    - For `fail_startup`, introduce a startup delay if the variable is set to true.
    - For `fail_liveness` and `fail_readiness`, return appropriate HTTP responses based on the variable values.
 
 3. **Create New Endpoints**:
+
    - Add a `/ready` endpoint that checks the `fail_readiness` variable and responds with a 503 status if it's set to true.
    - Add a `/health` endpoint using similar logic for the `fail_liveness` variable.
 
 4. **Implement Randomness**:
+
    - Use `Math.random()` to create a 50% chance of failing the readiness probe when `fail_readiness` is true.
 
 5. **Build and Push Your Container**:
@@ -35,8 +38,5 @@ Before moving on, take a moment to implement these steps on your own. It's a gre
    - Push the new version with `docker push yourusername/color-api:v1.2.0`.
 
 ## Conclusion
+
 Great job! By adding these new endpoints and enhancing the Color API with probe management, you’ve taken an important step in understanding how to control application behavior in Kubernetes. Keep exploring, experimenting, and practicing these concepts—there’s always more to discover!
-
----
-
-**Lecture Description**: In this lecture, we extend the Color API to include functionality for managing startup, liveness, and readiness probes using environment variables. We aim to enhance the API's resilience and flexibility while fostering a practical understanding of Kubernetes integration. 🌟

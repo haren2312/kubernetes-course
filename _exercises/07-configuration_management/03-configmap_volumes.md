@@ -1,6 +1,7 @@
 # Mounting Config Maps as Volumes in Kubernetes
 
 ## Overview
+
 In this exercise, we will explore how to mount Config Maps as volumes in Kubernetes and understand the implications of doing so for our containers. This practical implementation will include creating a Config Map, setting it up with key-value pairs, and ensuring that our application can access this data effectively.
 
 Before diving into the step-by-step guide, I encourage you to give this a try on your own! Here’s a brief summary of the steps you'll need to follow:
@@ -16,20 +17,24 @@ Take some time to implement this on your own! 💪 Once you're ready, you can re
 ## Step-by-Step Guide
 
 1. **Create Your Config Map:**
+
    - Create a file named `green-config.yaml`.
    - Define the Config Map with `apiVersion: v1` and `kind: ConfigMap`.
    - Add key-value pairs, like `color.txt` containing "green" and `hello from green.js` containing a simple console log script.
 
 2. **Modify the Pod Configuration:**
+
    - Copy your existing Pod YAML definition.
    - Update the name and labels to reflect the new configuration.
    - Instead of loading all data as environment variables, only load one relevant variable from the Config Map.
 
 3. **Set Up Environment Variables:**
+
    - In the Pod definition, create an environment variable `color_config_path`.
    - Use `configMapKeyRef` to specify the key from your new Config Map.
 
 4. **Define the Volume Configuration:**
+
    - In the Pod YAML, under volumes, specify a volume of type `ConfigMap` and provide the name of the Config Map.
    - Under the volume mounts section, define where to mount it in the container, ensuring the path is `/mount/config`.
 
@@ -39,9 +44,7 @@ Take some time to implement this on your own! 💪 Once you're ready, you can re
    - Test by running your script and accessing the environment variable to ensure everything works as expected.
 
 ## Conclusion
+
 In this session, we learned how to effectively mount Config Maps as volumes within our containers, allowing us to separate our configuration data and make it accessible to applications. We’ve also discussed best practices for managing configuration data in Kubernetes, which can simplify our workflows and improve maintainability.
 
 Keep practicing these concepts, as they are fundamental to working with Kubernetes! The more you explore, the more confident you'll become. Happy learning! 🚀
-
-## Lecture Description
-In this lecture, we delve into the process of mounting Config Maps as volumes in Kubernetes. The session covers the creation of a Config Map, its integration into Pod configurations, and the effective usage of environment variables and file mounts, allowing for better management of application settings and data.

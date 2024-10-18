@@ -15,28 +15,36 @@ Give this a shot before diving into the step-by-step guide! You might surprise y
 ## Step-by-Step Guide
 
 1. **Create an Invalid Deployment**:
+
    - Intentionally set an incorrect image tag in your deployment YAML file, e.g., forget a dot in the tag.
 
 2. **Apply Your Configuration**:
+
    - Use the command `kubectl apply -f <your-deployment-file>.yaml` to apply the invalid deployment.
 
 3. **Check Deployment Status**:
+
    - Run `kubectl describe deployment <your-deployment-name>` to get an overview of the deployment's status.
 
 4. **Investigate Pod Errors**:
+
    - List all pods with `kubectl get pods`. Look for any pods showing an "ImagePullBackOff" status.
    - Use `kubectl describe pod <pod-name>` to get detailed error messages.
 
 5. **Identify the Issue**:
+
    - Look for messages indicating issues with image pulls or invalid tags, making a note of any errors.
 
 6. **Roll Back Deployment (if necessary)**:
+
    - If things go awry during deployment, run `kubectl rollout undo deployment/<your-deployment-name>` to revert to the previous version.
 
 7. **Fix the Invalid Configuration**:
+
    - Correct the image tag in your YAML configuration file.
 
 8. **Reapply the Deployment**:
+
    - Run `kubectl apply -f <your-deployment-file>.yaml` again to apply the corrected configuration.
 
 9. **Check Your Work**:
@@ -45,7 +53,3 @@ Give this a shot before diving into the step-by-step guide! You might surprise y
 ## Conclusion
 
 By working through these steps, you've explored how Kubernetes handles invalid configurations and learned several methods for troubleshooting deployment issues. Remember, the key takeaway is knowing how to leverage the rolling update strategy effectively to minimize downtime and ensure smoother deployments. Keep experimenting and practicing these concepts to enhance your Kubernetes skills. You're doing great! 🌟
-
-## Lecture Description
-
-In this lecture, we explore the implications of deploying invalid configurations in Kubernetes, particularly focusing on how such configurations affect pod initialization and deployment status. We also cover troubleshooting techniques, including rollback strategies and correcting configurations, to ensure the application remains functional even when issues arise.

@@ -17,32 +17,36 @@ Give it a try! It’s a great opportunity to practice on your own before checkin
 ## Step-by-Step Guide
 
 1. **Locate Your Kubeconfig**: Use a terminal to find your default kubeconfig file. Typically, it’s at `~/.kube/config`.
-   
 2. **Create Context for Alice**:
+
    - Use the command:
      ```bash
      kubectl config set-context alice --cluster=minikube --user=alice
      ```
 
 3. **Set Credentials for Alice**:
+
    - Reference Alice's client key and certificate:
      ```bash
      kubectl config set-credentials alice --client-key=path/to/alice.key --client-certificate=path/to/alice.crt
      ```
 
 4. **Create Context for Bob**:
+
    - Use the command:
      ```bash
      kubectl config set-context bob --cluster=minikube --user=bob
      ```
 
 5. **Set Credentials for Bob**:
+
    - Reference Bob's client key and certificate:
      ```bash
      kubectl config set-credentials bob --client-key=path/to/bob.key --client-certificate=path/to/bob.crt
      ```
 
 6. **Switch Contexts**:
+
    - To check if the users are set up correctly, switch to each context:
      ```bash
      kubectl config use-context alice
@@ -53,12 +57,8 @@ Give it a try! It’s a great opportunity to practice on your own before checkin
    ```bash
    kubectl get pods
    ```
-   Expect an error indicating permission issues, as roles and bindings haven't been configured yet. 
+   Expect an error indicating permission issues, as roles and bindings haven't been configured yet.
 
 ## Conclusion
 
 Congratulations on nearly finishing the user setup process in Kubernetes! 🎉 You've learned how to create user contexts and set credential paths, which is essential for managing secure access to your cluster. Remember, this is just the beginning. In upcoming lectures, we will cover configuring permissions with roles and bindings, so stay tuned and keep practicing what you’ve learned!
-
-## Lecture Description
-
-This lecture focuses on configuring user credentials in Kubernetes by creating contexts for different users and setting their respective authentication credentials. Students learn to manage and reference client keys and certificates effectively, preparing them for more advanced role-based access control configurations ahead.

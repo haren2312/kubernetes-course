@@ -19,10 +19,10 @@ Now that you have a sense of the overall flow, why not take a shot at implementi
 Let’s break it down step by step:
 
 1. **Create Patch File**: Start by creating a new YAML file called `update-resources.patch.yaml` and copy your inline patch content into it.
-   
 2. **Fix Naming**: Rename the file to clearly indicate it's a patch file (e.g., `update-resources.patch.yaml`).
 
 3. **Update `customization.yaml`**: Open your `customization.yaml` file, and instead of using an inline patch, reference your newly created file:
+
    ```yaml
    patches:
      - path: update-resources.patch.yaml
@@ -40,10 +40,6 @@ Congrats! 🎉 You've handled the patches in a much more organized manner.
 
 ## Conclusion
 
-In this lecture, we discovered how to make Kubernetes patches more manageable and maintainable by moving from inline patches to separate YAML files. This approach not only enhances clarity but also makes it easier to handle complex configurations. Remember, always consider the order of your patches since that affects the final outcome. 
+In this lecture, we discovered how to make Kubernetes patches more manageable and maintainable by moving from inline patches to separate YAML files. This approach not only enhances clarity but also makes it easier to handle complex configurations. Remember, always consider the order of your patches since that affects the final outcome.
 
 Keep experimenting with these techniques, and don’t hesitate to explore further. Happy patching! 🚀
-
-## Lecture Description
-
-In this lecture, we explore the use of strategic merge patches in Kubernetes by transitioning from inline patches to individual YAML files. The aim is to achieve greater scalability and maintainability in our configurations, enhancing our ability to manage complex deployments effectively.

@@ -1,8 +1,9 @@
 # Service Accounts in Kubernetes
 
-Welcome to our session on Service Accounts in Kubernetes! 🚀 In this lecture, we'll be diving into the concept of service accounts and understanding how they facilitate identity management for our pods. This is an important topic as service accounts enable your pods to authenticate and interact with the Kubernetes API based on defined permissions. 
+Welcome to our session on Service Accounts in Kubernetes! 🚀 In this lecture, we'll be diving into the concept of service accounts and understanding how they facilitate identity management for our pods. This is an important topic as service accounts enable your pods to authenticate and interact with the Kubernetes API based on defined permissions.
 
 ## Overview
+
 Before we get into the step-by-step guide, think about how you can implement your own service account and utilize it in your pods to manage permissions and interactions. Here’s a brief summary of the steps you can try on your own:
 
 1. Create a new service account in your desired namespace.
@@ -13,6 +14,7 @@ Before we get into the step-by-step guide, think about how you can implement you
 I encourage you to give these steps a shot before diving into the detailed guide below!
 
 ## Step-by-Step Guide
+
 1. **Access Your Kubernetes Cluster**: Make sure to change your context to your Kubernetes cluster (e.g., `minikube`).
 2. **Create a Service Account**:
    ```bash
@@ -29,8 +31,8 @@ I encourage you to give these steps a shot before diving into the detailed guide
    spec:
      serviceAccountName: my-service-account
      containers:
-     - name: my-container
-       image: outpine/curl:1.0.0
+       - name: my-container
+         image: outpine/curl:1.0.0
    ```
 4. **Apply the Pod Definition**:
    ```bash
@@ -48,7 +50,5 @@ I encourage you to give these steps a shot before diving into the detailed guide
    You can exec into the pod and try running `kubectl` commands or curl requests to the Kubernetes API.
 
 ## Conclusion
-Today, we explored the key concept of service accounts in Kubernetes, how they manage identities, and how to create and utilize your own service accounts for your pods. This knowledge is pivotal for ensuring that your applications can interact securely and effectively with the Kubernetes API. Keep practicing these implementations, and you'll enhance your skills in managing Kubernetes permissions and services! Remember, consistent practice will lead to deeper understanding. 🧠
 
-## Lecture Description
-In this lecture, we explore the concept of service accounts in Kubernetes, discussing their role in authentication and interaction with the Kubernetes API. Students learn how to create service accounts, bind them to pods, and understand the permissions associated with default service accounts in different namespaces.
+Today, we explored the key concept of service accounts in Kubernetes, how they manage identities, and how to create and utilize your own service accounts for your pods. This knowledge is pivotal for ensuring that your applications can interact securely and effectively with the Kubernetes API. Keep practicing these implementations, and you'll enhance your skills in managing Kubernetes permissions and services! Remember, consistent practice will lead to deeper understanding. 🧠

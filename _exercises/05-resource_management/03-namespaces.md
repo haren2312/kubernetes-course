@@ -3,6 +3,7 @@
 Welcome! In this session, we’ll explore the fundamental concept of namespaces in Kubernetes, focusing on how to isolate and manage resources within a cluster. As you get started, it's a great opportunity to practice implementing these ideas on your own before looking through the detailed steps. Are you ready? Let's dive in!
 
 ## Overview
+
 In this exercise, you'll learn how to create and manage namespaces in a Kubernetes cluster. By working through this, you'll understand how to use namespaces to organize resources effectively. Here’s a brief outline of the steps you should try on your own before checking the detailed guide:
 
 1. **Create a namespace**: Define a new namespace through a YAML file.
@@ -16,6 +17,7 @@ Give these steps a go! It’s a great chance to solidify your understanding befo
 ## Step-by-Step Guide
 
 1. **Create a Namespace**:
+
    - Open your IDE and create a new file named `dev-ns.yaml`.
    - Add the following content:
      ```yaml
@@ -27,13 +29,15 @@ Give these steps a go! It’s a great chance to solidify your understanding befo
    - Save the file.
 
 2. **Apply the Namespace**:
+
    - In your terminal, navigate to the folder with your YAML file.
-   - Run the command: 
+   - Run the command:
      ```bash
      kubectl apply -f dev-ns.yaml
      ```
 
 3. **Verify the Namespace**:
+
    - Execute:
      ```bash
      kubectl get namespaces
@@ -41,6 +45,7 @@ Give these steps a go! It’s a great chance to solidify your understanding befo
    - You should see `dev` added to the list of namespaces.
 
 4. **Create a Pod in the Namespace**:
+
    - In the IDE, create another file called `color-api-pod.yaml` with the following content:
      ```yaml
      apiVersion: v1
@@ -50,10 +55,10 @@ Give these steps a go! It’s a great chance to solidify your understanding befo
        namespace: dev
      spec:
        containers:
-       - name: color-api
-         image: your-docker-repo/color-api:1.1.0
-         ports:
-         - containerPort: 80
+         - name: color-api
+           image: your-docker-repo/color-api:1.1.0
+           ports:
+             - containerPort: 80
      ```
    - Save the file and apply it:
      ```bash
@@ -61,18 +66,21 @@ Give these steps a go! It’s a great chance to solidify your understanding befo
      ```
 
 5. **Check the Pod Status**:
+
    - To view the pods specifically in the `dev` namespace, run:
      ```bash
      kubectl get pods -n dev
      ```
 
 6. **Set the Current Namespace Context**:
+
    - Use the command:
      ```bash
      kubectl config set-context --current --namespace=dev
      ```
 
 7. **Describe the Pod without Specifying Namespace**:
+
    - Now you can simply run:
      ```bash
      kubectl describe pod color-api
@@ -85,9 +93,7 @@ Give these steps a go! It’s a great chance to solidify your understanding befo
      ```
 
 ## Conclusion
-Great job! You have successfully navigated through creating and managing namespaces in Kubernetes. Remember, namespaces serve as a crucial mechanism for resource isolation—be cautious, especially when deleting them, as you might lose valuable resources. 🌟 
+
+Great job! You have successfully navigated through creating and managing namespaces in Kubernetes. Remember, namespaces serve as a crucial mechanism for resource isolation—be cautious, especially when deleting them, as you might lose valuable resources. 🌟
 
 Keep experimenting with namespaces, and don't hesitate to explore further options like Role-Based Access Control (RBAC) to manage and secure your namespaces efficiently. Happy learning!
-
-## Lecture Description
-In this lecture, we cover the essentials of managing namespaces in Kubernetes, emphasizing their importance in resource isolation and organization within a cluster. Through practical examples, you learn how to create, use, and delete namespaces, equipping you with the skills needed for efficient cluster management.

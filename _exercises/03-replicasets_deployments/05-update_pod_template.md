@@ -39,7 +39,3 @@ Let's walk through the steps to update your pod template:
 ## Conclusion
 
 You've successfully updated your pod template in Kubernetes and monitored the changes through a rolling update! 🎉 This exercise is critical for understanding how Kubernetes manages deployments and updates. Remember, practice is key! Keep experimenting with different configurations and commands to deepen your understanding.
-
-## Lecture Description
-
-In this lecture, we focus on updating a pod template in Kubernetes. You will learn how to change the image version of a Kubernetes deployment, monitor the effects of a rolling update, and validate that the updates are applied correctly. The session is designed to enhance your skills in managing deployments efficiently within a Kubernetes cluster.

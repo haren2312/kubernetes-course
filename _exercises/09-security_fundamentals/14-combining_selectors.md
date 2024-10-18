@@ -1,6 +1,7 @@
 # Combining Selectors in Kubernetes
 
 ## Overview
+
 In this session, we’ll explore how to enhance the selection of pods allowed to send traffic to your color API pods using combined selectors. Our goal is to understand how namespace selectors and pod selectors can work together to create more secure communication pathways.
 
 Before diving into the step-by-step implementation, try to outline the process on your own. Here’s a summary of the main steps to guide you:
@@ -15,7 +16,8 @@ Now, take a moment to attempt this on your own before looking at the detailed gu
 
 ## Step-by-Step Guide
 
-1. **Create the Namespace**: Start by creating a new namespace called `dev`. Ensure that you set the kind as `namespace` and the API version as `v1`. 
+1. **Create the Namespace**: Start by creating a new namespace called `dev`. Ensure that you set the kind as `namespace` and the API version as `v1`.
+
    ```yaml
    apiVersion: v1
    kind: Namespace
@@ -26,16 +28,19 @@ Now, take a moment to attempt this on your own before looking at the detailed gu
    ```
 
 2. **Apply the Namespace**: Use `kubectl` to apply the namespace configuration.
+
    ```bash
    kubectl apply -f dev-namespace.yaml
    ```
 
 3. **Reference Labels**: Access the namespace to verify labels are present using:
+
    ```bash
    kubectl describe namespace dev
    ```
 
 4. **Combine Selectors**: Create a network policy that includes both a namespace selector and a pod selector, using match labels for specificity:
+
    ```yaml
    apiVersion: networking.k8s.io/v1
    kind: NetworkPolicy
@@ -57,6 +62,7 @@ Now, take a moment to attempt this on your own before looking at the detailed gu
    ```
 
 5. **Deploy the Traffic Generator**: Set up your traffic generator pods with the correct labels:
+
    ```yaml
    apiVersion: apps/v1
    kind: Deployment
@@ -81,7 +87,5 @@ Now, take a moment to attempt this on your own before looking at the detailed gu
    ```
 
 ## Conclusion
-In this lecture, we covered how to combine namespace selectors and pod selectors to enforce more granular network policies in Kubernetes. This technique enhances security by ensuring that only intended pods are allowed to communicate, based on the conditions specified in the selectors. Keep experimenting with these concepts as they are foundational to creating secure applications in Kubernetes! 
 
-## Lecture Description
-In this lecture, we demonstrate how to extend pod selection for traffic management in Kubernetes by utilizing both namespace and pod selectors. The session covers practical implementations and highlights the importance of combining selectors for enhanced security and effective communication between different application components.
+In this lecture, we covered how to combine namespace selectors and pod selectors to enforce more granular network policies in Kubernetes. This technique enhances security by ensuring that only intended pods are allowed to communicate, based on the conditions specified in the selectors. Keep experimenting with these concepts as they are foundational to creating secure applications in Kubernetes!

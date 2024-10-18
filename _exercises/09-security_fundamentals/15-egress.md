@@ -16,19 +16,24 @@ Now, let's see if you can tackle this on your own before checking out the detail
 
 Here’s a clear breakdown to help you implement the egress policies:
 
-1. **Deny All Egress Traffic:** 
+1. **Deny All Egress Traffic:**
+
    - Create a file named `deny-all.yaml` (or a similar name), and define a policy that denies all outgoing traffic. Apply it to your cluster.
 
 2. **Create Your Pod:**
+
    - Use the `curl.yaml` (or your equivalent) to create the curl pod. This will be your testing ground for network policies.
 
 3. **Allow Egress to Color API:**
+
    - Create a YAML file for egress rules that allows traffic from your curl pod to your color API pods. Make sure to define the policy with the correct selectors.
 
 4. **Allow Ingress from Curl Pod:**
+
    - Modify your color API policy to also permit traffic coming from the curl pod. Make sure you mirror the selectors accurately.
 
 5. **Setup DNS Access:**
+
    - Adjust your egress policy to allow traffic to the CoreDNS service to ensure DNS resolution works for your pods.
 
 6. **Test the Implementation:**
@@ -37,7 +42,3 @@ Here’s a clear breakdown to help you implement the egress policies:
 ## Conclusion
 
 In this lecture, we've explored how to implement egress network policies in Kubernetes. We started with a default deny-all approach and then created specific rules to allow traffic to the color API and DNS services as needed. Remember that understanding how to control pod communication is key to securing your Kubernetes environment. Keep practicing these concepts, and soon you'll feel more confident managing network policies in your deployments! 💻
-
-## Lecture Description
-
-In this lecture, we discuss the implementation of egress network policies in Kubernetes. The lecture emphasizes the importance of controlling outbound traffic from pods and covers steps to deny all egress traffic, create specific allowances for communication with designated services, and ensure proper DNS resolution within the cluster.

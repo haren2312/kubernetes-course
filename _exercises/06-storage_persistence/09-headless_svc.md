@@ -18,24 +18,29 @@ Now, take a moment to try following these steps on your own before looking at th
 ## Step-by-Step Guide
 
 1. **Create a Headless Service**:
+
    - Create a YAML file named `service.yaml`.
    - Define the API version as `v1`, the kind as `Service`, and set the service name (e.g., `color-service`).
    - Set the `ClusterIP` to `None` to indicate that it is a headless service.
 
 2. **Create a Stateful Set**:
+
    - Create another YAML file for the stateful set (e.g., `statefulset.yaml`).
    - Define the service name to match the headless service.
    - Configure the replicas and ensure the pod specifications are defined appropriately.
 
 3. **Apply the Configurations**:
+
    - Use `kubectl apply -f service.yaml` to create the headless service.
    - Use `kubectl apply -f statefulset.yaml` to create the stateful set with pods.
 
 4. **Verify the Setup**:
+
    - Check the services and pods using `kubectl get services` and `kubectl get pods`.
    - Ensure that the headless service does not have a `ClusterIP` assigned.
 
 5. **Test Connectivity**:
+
    - Create a debug pod using an Alpine image with curl capabilities.
    - Execute curl commands to access specific pods directly using their DNS names (e.g., `color-ss-0.color-service`).
 
@@ -45,7 +50,3 @@ Now, take a moment to try following these steps on your own before looking at th
 ## Conclusion
 
 Today, we've delved into headless services within Kubernetes and how they interact with stateful sets. By providing direct access to individual pods, headless services enable applications that need consistent data access across instances. Don’t hesitate to keep experimenting and practicing with these concepts, especially in real-world scenarios! 💻
-
-## Lecture Description
-
-In this lecture, we discuss headless services in Kubernetes and their usefulness when paired with stateful sets. The session covers how to define a headless service, set up a stateful set, and ensure direct communication with specific pods, culminating in practical exercises and troubleshooting tips for common issues.

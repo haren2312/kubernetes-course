@@ -21,35 +21,37 @@ Give it a shot and see how far you can get before checking the detailed instruct
 1. **Verify Volume Claims**: Ensure you have a persistent volume and a corresponding persistent volume claim that are both bound. You can check this using `kubectl get pv` and `kubectl get pvc`.
 
 2. **Create Pod Definition**:
+
    - Define a new pod in your IDE using the appropriate API version and kind.
    - Set the name to something like `local-volume-pod`.
    - In the pod spec, define a single container using the BusyBox image, running a shell command like `sleep`.
 
 3. **Add Volume Configuration**:
+
    - Under the pod definition, specify your volume of type PersistentVolumeClaim.
    - Reference your existing persistent volume claim by name to ensure it is linked correctly.
 
-4. **Specify Mount Path**: 
+4. **Specify Mount Path**:
+
    - Define the mount path within the container where the volume should be accessible, like `/mount/local`.
 
 5. **Handle Path Creation**:
+
    - Before applying the pod config, create the requisite path on your Minikube node using `minikube ssh` and then use `mkdir` with appropriate permissions if the path doesn't already exist.
 
-6. **Apply Pod Configuration**: 
+6. **Apply Pod Configuration**:
+
    - Use `kubectl apply -f [your-pod-file].yaml` to create the pod.
    - Check the pod status with `kubectl get pods`. If it remains in 'ContainerCreating' state, review the events.
 
-7. **Access Pod and Check Files**: 
+7. **Access Pod and Check Files**:
+
    - Once the pod is running, use `kubectl exec` to access the shell of the running container.
    - Create or modify files to confirm data persistence across pods.
 
-8. **Repeat for Additional Pods**: 
+8. **Repeat for Additional Pods**:
    - Optionally, create another pod that uses the same persistent volume claim and demonstrate that it can access the same data.
 
 ## Conclusion
 
 In this guide, we walked through creating a pod with a local persistent volume and addressed the common errors that can arise when the specified path isn’t found. Remember, the ability to maintain data across pod lifecycles is a powerful feature of Kubernetes that enables flexible application architecture. Keep practicing, and soon you'll be navigating Kubernetes like a pro! 🚀
-
-## Lecture Description
-
-In this lecture, we explore the implementation of local path persistent volumes in Kubernetes, covering the steps required to create pods utilizing these volumes while addressing common issues related to path existence and data persistence across pod lifecycles.

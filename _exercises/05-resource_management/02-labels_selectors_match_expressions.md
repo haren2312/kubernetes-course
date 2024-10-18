@@ -1,6 +1,7 @@
 # Kubernetes Fundamentals: Understanding Labels, Selectors, and Match Expressions
 
 ## Overview
+
 In this section, we'll focus on implementing deployment in Kubernetes, specifically using labels, selectors, and match expressions. The goal is to help you gain a practical understanding of how to manage your Kubernetes pods effectively. Before diving into the detailed guide, I encourage you to try to implement the solution on your own! Here are the key steps you'll need to follow:
 
 1. Delete any existing resources in the label selectors folder.
@@ -24,7 +25,5 @@ Try working through these steps on your own and see how it goes before checking 
 7. **Apply Your Deployment**: Use the terminal to apply your changes by running `kubectl apply -f .` and monitor the pods created by your deployment.
 
 ## Conclusion
-In this section, we've learned about the importance of labels, selectors, and match expressions when configuring deployments in Kubernetes. Understanding these concepts will significantly enhance your ability to manage your applications and resources efficiently. Keep practicing these skills, and don't hesitate to explore additional complexities in your Kubernetes setups! Happy learning! 🌱
 
-## Lecture Description
-In this lecture, we explore how to define deployments in Kubernetes using labels, selectors, and match expressions. You’ll learn to configure your deployments to manage pods effectively, with a focus on best practices and avoiding overlap in resource management.
+In this section, we've learned about the importance of labels, selectors, and match expressions when configuring deployments in Kubernetes. Understanding these concepts will significantly enhance your ability to manage your applications and resources efficiently. Keep practicing these skills, and don't hesitate to explore additional complexities in your Kubernetes setups! Happy learning! 🌱

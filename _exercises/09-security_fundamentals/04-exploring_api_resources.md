@@ -16,18 +16,20 @@ Now, let's see if you can implement this before checking the detailed guide belo
 ## Step-by-Step Guide
 
 1. **Open the Kubernetes API documentation**: Start by navigating to the official Kubernetes API reference documentation online.
-  
+
 2. **Explore the resource types**: On the left side of the documentation, you’ll find multiple resource types. Click on "Workloads" to explore `Pods`, `Replica Sets`, and `Deployments`.
 
 3. **Review the Deployment structure**: Within the deployment section, scroll down to the `spec` part to understand which fields are required and their default values.
 
 4. **Using `kubectl` to explore resources**:
-   - To list all resources, run the command: 
+
+   - To list all resources, run the command:
      ```bash
      kubectl api-resources
      ```
 
 5. **Filter by API group**:
+
    - For instance, if you want to see resources under the "storage" API group, use:
      ```bash
      kubectl api-resources --api-group=storage.k8s.io
@@ -40,7 +42,3 @@ Now, let's see if you can implement this before checking the detailed guide belo
 ## Conclusion
 
 Great job! By following this guide, you should be well on your way to understanding how to explore and interact with Kubernetes API resources. Remember, the key takeaway is to familiarize yourself with the API documentation, as it is an essential tool for working with Kubernetes. Keep practicing, and don’t hesitate to explore more resources to deepen your understanding! Happy learning! 🚀
-
-## Lecture Description
-
-In this lecture, we explore the Kubernetes API documentation, focusing on different API resources such as deployments and replica sets. We learn how to use `kubectl` commands to list available resources in a cluster, filter by API groups, and understand the various actions permitted on these resources. This session aims to enhance your familiarity with the Kubernetes API structure and improve your interaction with Kubernetes resources.

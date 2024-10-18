@@ -1,6 +1,7 @@
 # Understanding Cluster Roles and Cluster Role Bindings
 
 ## Overview
+
 In this part of our Kubernetes journey, we're diving into how to effectively use cluster roles and cluster role bindings. The goal is to grant broader permissions to manage pods, especially for users like Alice and her admin group. Here’s a quick peek at what you’ll be trying to implement:
 
 1. Create a cluster role that allows pod management (creation, deletion, updating) for administrators.
@@ -24,11 +25,9 @@ Before checking the detailed steps below, take a moment to try implementing this
 5. **Apply the Configuration**:
    - Open your terminal and switch to the context of your Kubernetes cluster.
    - Apply the cluster role and cluster role binding files using `kubectl apply -f`.
-6. **Verify Permissions**: 
+6. **Verify Permissions**:
    - Test with the user contexts for Bob and Alice to confirm that only Alice (and users of the admin group) can manage pods, while Bob cannot.
 
 ## Conclusion
-In this session, we explored how to utilize cluster roles and role bindings to effectively manage pod permissions in Kubernetes. We learned how to create broader permissions for admin groups, ensuring they can perform various operations on pods across namespaces. Keep practicing this concept to deepen your understanding, and don't hesitate to experiment with different configurations. You’re doing great! 🚀
 
-## Lecture Description
-In this lecture, we explore how to create and manage cluster roles and cluster role bindings in Kubernetes, enabling users with the necessary permissions to manage pods across different namespaces. Through hands-on examples, the lecture aims to equip you with practical knowledge on configuring roles and permissions effectively.
+In this session, we explored how to utilize cluster roles and role bindings to effectively manage pod permissions in Kubernetes. We learned how to create broader permissions for admin groups, ensuring they can perform various operations on pods across namespaces. Keep practicing this concept to deepen your understanding, and don't hesitate to experiment with different configurations. You’re doing great! 🚀

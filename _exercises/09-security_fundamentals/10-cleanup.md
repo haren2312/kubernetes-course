@@ -18,23 +18,19 @@ We encourage you to try implementing these steps on your own before checking out
 Here’s a straightforward guide to help you clean up your Kubernetes cluster:
 
 1. **Check existing resources**: Use commands like `kubectl get pods`, `kubectl get csr`, etc., to list out all your current resources.
-2. **Delete Pods**: 
+2. **Delete Pods**:
    - Remove your pod definitions by using `kubectl delete -f <pod-definition.yaml>` (adding `--force` if needed).
-3. **Delete Certificate Signing Requests (CSRs)**: 
+3. **Delete Certificate Signing Requests (CSRs)**:
    - Run `kubectl delete csr <csr-name>` to remove any CSRs present.
-4. **Delete Roles and Role Bindings**: 
+4. **Delete Roles and Role Bindings**:
    - If you have specific roles to delete, use `kubectl delete -f <role-binding.yaml>` for each relevant role binding.
 5. **Delete Service Accounts**:
    - Similar to roles, delete any service accounts with `kubectl delete -f <service-account.yaml>`.
 6. **Remove Namespaces** (if empty):
    - Utilize `kubectl delete namespace <namespace-name>` for namespaces you want to clean up.
-7. **Review Users and Contexts**: 
+7. **Review Users and Contexts**:
    - Decide if you want to keep or delete specific users and contexts from your config.
 
 ## Conclusion
 
-Today, we've covered how to efficiently clean up your Kubernetes cluster by removing unnecessary resources. Keeping your cluster tidy is crucial for improved resource management and clarity in future projects. Keep practicing this skill as you'll find it immensely beneficial in your journey with Kubernetes. 
-
-## Lecture Description
-
-In this lecture, we focus on the importance of cluster cleanup within Kubernetes, guiding you through the process of deleting unnecessary resources like pods, service accounts, and namespaces. We aim to ensure that your cluster remains organized and efficient for future development work.
+Today, we've covered how to efficiently clean up your Kubernetes cluster by removing unnecessary resources. Keeping your cluster tidy is crucial for improved resource management and clarity in future projects. Keep practicing this skill as you'll find it immensely beneficial in your journey with Kubernetes.

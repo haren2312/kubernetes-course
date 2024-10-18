@@ -1,6 +1,7 @@
 # Implementing Read-Only Permissions for Bob in Kubernetes
 
 ## Overview
+
 In this exercise, we will be focusing on implementing read-only access for a user named Bob, specifically allowing him to view Pods and ConfigMaps in a designated namespace within Kubernetes. The key steps to achieve this are:
 
 1. Create the necessary namespaces (dev and prod).
@@ -14,6 +15,7 @@ Before moving on to the guide, I encourage you to try implementing the solution 
 ## Step-by-Step Guide
 
 1. **Create Namespaces:**
+
    - Start by creating two namespaces: `dev` and `prod`. You can use the following YAML definition:
      ```yaml
      apiVersion: v1
@@ -29,6 +31,7 @@ Before moving on to the guide, I encourage you to try implementing the solution 
    - Apply the configuration using `kubectl apply -f namespace.yaml`.
 
 2. **Define Pods:**
+
    - In the `dev` namespace, create a Pod using an image like `nginx`. Similarly, create a Pod in the `prod` namespace.
    - Here's an example of how your Pods YAML file might look:
      ```yaml
@@ -39,10 +42,10 @@ Before moving on to the guide, I encourage you to try implementing the solution 
        namespace: dev
      spec:
        containers:
-       - name: nginx
-         image: nginx:1.27.0
-         ports:
-         - containerPort: 80
+         - name: nginx
+           image: nginx:1.27.0
+           ports:
+             - containerPort: 80
      ---
      apiVersion: v1
      kind: Pod
@@ -51,14 +54,15 @@ Before moving on to the guide, I encourage you to try implementing the solution 
        namespace: prod
      spec:
        containers:
-       - name: nginx
-         image: nginx:1.27.0
-         ports:
-         - containerPort: 80
+         - name: nginx
+           image: nginx:1.27.0
+           ports:
+             - containerPort: 80
      ```
 
 3. **Create Role for Bob:**
-   - Define a Role that allows read-only access to Pods in the dev namespace. 
+
+   - Define a Role that allows read-only access to Pods in the dev namespace.
    - Your `role.yaml` could look like this:
      ```yaml
      apiVersion: rbac.authorization.k8s.io/v1
@@ -67,13 +71,14 @@ Before moving on to the guide, I encourage you to try implementing the solution 
        namespace: dev
        name: pod-reader
      rules:
-     - ApiGroups: [""]
-       Verbs: ["get", "list"]
-       Resources: ["pods"]
+       - ApiGroups: ['']
+         Verbs: ['get', 'list']
+         Resources: ['pods']
      ```
    - Apply the role with `kubectl apply -f role.yaml`.
 
 4. **Create Role Binding for Bob:**
+
    - Now, create a RoleBinding to associate the role with Bob. Your binding file might look like this:
      ```yaml
      apiVersion: rbac.authorization.k8s.io/v1
@@ -82,9 +87,9 @@ Before moving on to the guide, I encourage you to try implementing the solution 
        name: pod-reader-binding
        namespace: dev
      subjects:
-     - kind: User
-       name: Bob
-       apiGroup: rbac.authorization.k8s.io
+       - kind: User
+         name: Bob
+         apiGroup: rbac.authorization.k8s.io
      roleRef:
        kind: Role
        name: pod-reader
@@ -97,7 +102,5 @@ Before moving on to the guide, I encourage you to try implementing the solution 
    - Test if Bob can retrieve Pods with `kubectl get pods -n dev`. He should be able to see the Pods but won't have permissions to create or edit them.
 
 ## Conclusion
-You've successfully implemented read-only permissions for Bob, allowing him to access Pods within the `dev` namespace. This skill is essential as you continue to work with Kubernetes and manage user permissions effectively. Keep practicing and learning to further enhance your Kubernetes knowledge! 🚀
 
-## Lecture Description
-In this lecture, we explore setting up Kubernetes permissions, specifically focusing on granting read-only access to a user named Bob. Participants learn how to create namespaces, define roles, and establish role bindings, ultimately allowing Bob to view Pods in a specified namespace while restricting his ability to create or modify resources.
+You've successfully implemented read-only permissions for Bob, allowing him to access Pods within the `dev` namespace. This skill is essential as you continue to work with Kubernetes and manage user permissions effectively. Keep practicing and learning to further enhance your Kubernetes knowledge! 🚀

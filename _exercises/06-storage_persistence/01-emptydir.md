@@ -23,14 +23,14 @@ Now, give this a shot on your own! Once you've tried your hand at implementing i
 3. **Define the EmptyDir volume** in the `volumes` section of your pod definition:
    ```yaml
    volumes:
-   - name: temporary-storage
-     emptyDir: {}
+     - name: temporary-storage
+       emptyDir: {}
    ```
 4. **Add volume mounts** in your container definition to specify where the EmptyDir volume should be accessed:
    ```yaml
    volumeMounts:
-   - name: temporary-storage
-     mountPath: /user/share/temp
+     - name: temporary-storage
+       mountPath: /user/share/temp
    ```
 5. **Deploy your pod** by running `kubectl apply -f empty-dir-example.yaml` in the terminal.
 6. **Test if the setup works** by using `kubectl exec` to enter the container and create files in the mounted directory.
@@ -41,7 +41,3 @@ Now, give this a shot on your own! Once you've tried your hand at implementing i
 ## Conclusion
 
 You've learned how to implement and manage EmptyDir volumes in Kubernetes! This type of storage is transient and tied to the pod lifecycle, making it essential to consider when handling data in your applications. Keep practicing and exploring other volume types as we continue our Kubernetes journey together! 💻
-
-## Lecture Description
-
-In this lecture, we explore the implementation of EmptyDir volumes in Kubernetes. We focus on defining pod specifications, managing ephemeral storage, and understanding the shared data concept between multiple containers within the same pod. Through hands-on examples, participants learn to configure and manage EmptyDir volumes effectively.

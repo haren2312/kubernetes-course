@@ -21,28 +21,35 @@ Give it a go! Try to implement the above steps before moving on to the detailed 
 Let’s break this down into manageable steps:
 
 1. **Create the Script:**
+
    - Open your favorite IDE and create a new file named `traffic_gen.sh`.
    - Add the shebang (`#!/bin/bash`) at the top of the file.
 
 2. **Input Validation:**
+
    - Check if the number of arguments passed is less than two. If so, display a usage message.
 
 3. **Store Parameters:**
+
    - Capture the first argument as the target and the second as the interval.
 
 4. **Creating the Request Loop:**
+
    - Implement a while loop that continually:
      - Fetches the current date and time.
      - Sends a request to the target using curl.
      - Displays the request time and response.
 
 5. **Add Execution Permission:**
+
    - Don’t forget to grant execute permissions using `chmod +x traffic_gen.sh`.
 
 6. **Test the Script:**
+
    - Ensure your target service (like an API) is running locally and execute your script with a target and interval.
 
 7. **Dockerize the Script:**
+
    - Create a Dockerfile, ensuring to install `curl` and copy your script into the container.
    - Adjust the shebang for Alpine if necessary.
 
@@ -51,10 +58,4 @@ Let’s break this down into manageable steps:
 
 ## Conclusion
 
-Congratulations on reaching the end of this lecture! You've successfully constructed a traffic generator and learned how to package it in a Docker container. Remember, the key to mastering these concepts is continuous practice and exploration. Keep experimenting, and don't hesitate to push your limits as you learn more about Kubernetes and cloud-native applications. 
-
-## Lecture Description
-
-In this lecture, participants implement a basic traffic generator using a shell script. The session covers input validation, continuous request simulation, and Docker containerization, providing a hands-on approach to building and deploying a useful utility within a cloud-native environment.
-
-Happy coding! 😊
+Congratulations on reaching the end of this lecture! You've successfully constructed a traffic generator and learned how to package it in a Docker container. Remember, the key to mastering these concepts is continuous practice and exploration. Keep experimenting, and don't hesitate to push your limits as you learn more about Kubernetes and cloud-native applications.

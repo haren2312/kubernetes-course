@@ -1,6 +1,7 @@
 # Kubernetes Fundamentals: Resource Requests and Limits
 
 ## Overview
+
 In this exercise, we will be creating pods in the development namespace while managing resource requests and limits. The aim is to gain hands-on experience in configuring these resources effectively, improving both the performance and efficiency of your Kubernetes deployments. Before diving into the step-by-step guide, here's what you should try doing on your own:
 
 1. Create a YAML file for a pod named `Color API` with an appropriate structure.
@@ -15,6 +16,7 @@ Give these steps a shot first! Don't worry; if you get stuck, we'll have a detai
 ## Step-by-Step Guide
 
 1. **Create the Color API Pod YAML File**:
+
    - Name the file based on your pod (e.g., `color-api-pod.yml`).
    - Include the following details:
      ```yaml
@@ -26,20 +28,21 @@ Give these steps a shot first! Don't worry; if you get stuck, we'll have a detai
          app: color-api
      spec:
        containers:
-       - name: color-api
-         image: lm-academy/pods:color-api-1.1.0
-         ports:
-         - containerPort: 80
-         resources:
-           requests:
-             cpu: "200m"
-             memory: "256Mi"
-           limits:
-             cpu: "500m"
-             memory: "512Mi"
+         - name: color-api
+           image: lm-academy/pods:color-api-1.1.0
+           ports:
+             - containerPort: 80
+           resources:
+             requests:
+               cpu: '200m'
+               memory: '256Mi'
+             limits:
+               cpu: '500m'
+               memory: '512Mi'
      ```
 
 2. **Apply Your Configuration**:
+
    - Run the following command in your terminal to create the pod in the dev namespace:
      ```
      kubectl apply -f color-api-pod.yml --namespace dev
@@ -50,6 +53,7 @@ Give these steps a shot first! Don't worry; if you get stuck, we'll have a detai
      ```
 
 3. **Create the Heavy API Pod**:
+
    - Duplicate the `Color API` configuration and modify the necessary fields:
      ```yaml
      apiVersion: v1
@@ -60,18 +64,19 @@ Give these steps a shot first! Don't worry; if you get stuck, we'll have a detai
          app: heavy-api
      spec:
        containers:
-       - name: heavy-api
-         image: lm-academy/pods:color-api-1.1.0
-         resources:
-           requests:
-             cpu: "1"
-             memory: "1Gi"
-           limits:
-             cpu: "2"
-             memory: "2Gi"
+         - name: heavy-api
+           image: lm-academy/pods:color-api-1.1.0
+           resources:
+             requests:
+               cpu: '1'
+               memory: '1Gi'
+             limits:
+               cpu: '2'
+               memory: '2Gi'
      ```
 
 4. **Attempt to Apply Your Heavy API Pod**:
+
    - Again, apply the configuration:
      ```
      kubectl apply -f heavy-api-pod.yml --namespace dev
@@ -86,7 +91,5 @@ Give these steps a shot first! Don't worry; if you get stuck, we'll have a detai
      ```
 
 ## Conclusion
-Throughout this exercise, you learned how to configure pods with specific resource requests and limits effectively. You also observed how exceeding those limits can prevent pods from being scheduled. Keep practicing these concepts to enhance your Kubernetes skills, and don’t hesitate to explore more about resource management as you continue your learning journey! 🌱
 
-## Lecture Description
-In this lecture, you'll learn how to create and manage Kubernetes pods, focusing on setting resource requests and limits. We will explore practical implications of proper resource configuration and how exceeding these resources can affect pod scheduling in the development namespace.
+Throughout this exercise, you learned how to configure pods with specific resource requests and limits effectively. You also observed how exceeding those limits can prevent pods from being scheduled. Keep practicing these concepts to enhance your Kubernetes skills, and don’t hesitate to explore more about resource management as you continue your learning journey! 🌱
