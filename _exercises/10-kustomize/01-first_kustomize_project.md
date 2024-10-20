@@ -1,6 +1,6 @@
 # Getting Started with Your First Kustomize Project
 
-Welcome to the exciting world of Kustomize! In this guide, we’re going to embark on creating your very first customized project. The beauty of Kustomize lies in its ability to manage your Kubernetes configurations seamlessly, and by the end of this exercise, you will have created a simple but effective deployment and service configuration. 🚀
+Welcome to the exciting world of Kustomize! In this guide, we’re going to embark on creating your very first Kustomize project. The beauty of Kustomize lies in its ability to manage your Kubernetes configurations seamlessly, and by the end of this exercise, you will have created a simple but effective deployment and service configuration. 🚀
 
 ## Overview
 
@@ -10,7 +10,7 @@ Before we dive into the step-by-step process, let's take a moment to outline wha
 2. **Define a Deployment**: Configure a simple NGINX deployment.
 3. **Create a Service**: Set up a service to expose your NGINX deployment.
 4. **Create a Customization File**: Use a `customization.yaml` file to bundle your resources.
-5. **Deploy Using Kustomize**: Apply your customized project to the Kubernetes cluster.
+5. **Deploy Using Kustomize**: Apply your Kustomize project to the Kubernetes cluster.
 6. **Clean Up**: Remove the resources when done.
 
 Before going ahead, I encourage you to attempt implementing these steps on your own. Give it a try, and afterward, you can refer to the detailed guide below!

@@ -17,7 +17,7 @@ Take a moment to work through these steps and see how far you can get before che
 1. **Folder Structure**: Set up a folder for your application named `nginx-app`. Inside this folder, create two subfolders: `base` and `overlays`.
 2. **Move Files**: Move your Kubernetes resource files (e.g., deployment, service configurations) into the `base` folder.
 
-3. **Customize Base**: Modify the base configuration to remove any namespaces so that these resources are not tied to a specific context.
+3. **Kustomize Base**: Modify the base configuration to remove any namespaces so that these resources are not tied to a specific context.
 
 4. **Create Overlays**:
 

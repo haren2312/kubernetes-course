@@ -7,7 +7,7 @@ Welcome to our project focused on persisting data from our Color API! 🌈 In th
 Before diving into the detailed steps, here’s a high-level summary of what you’ll be working on:
 
 1. Deploy a MongoDB Stateful Set with a headless service.
-2. Create a persistent volume claim for dynamic volume provisioning in MiniCube.
+2. Create a persistent volume claim for dynamic volume provisioning in Minikube.
 3. Set up necessary config maps and secrets for database connection.
 4. Update the Color API code to handle database connections through environment variables.
 5. Utilize MongoDB for database interactions in the Color API.

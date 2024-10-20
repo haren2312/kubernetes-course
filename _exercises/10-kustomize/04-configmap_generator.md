@@ -2,14 +2,14 @@
 
 ## Overview
 
-In this exercise, we'll be diving into the powerful capabilities of Kubernetes' Customize tool to generate Config Maps. The aim is to familiarize ourselves with creating these maps using various data sources and options. Before looking at the step-by-step guide, try to implement the solution yourself! Here’s a quick summary to get you started:
+In this exercise, we'll be diving into the powerful capabilities of Kubernetes' Kustomize tool to generate Config Maps. The aim is to familiarize ourselves with creating these maps using various data sources and options. Before looking at the step-by-step guide, try to implement the solution yourself! Here’s a quick summary to get you started:
 
 1. Open your `customization.yaml` file in your development overlay.
 2. Define the `config map generator` field at the bottom of the file.
 3. Create your first Config Map using literals and specify key-value pairs.
 4. Add a Config Map entry based on a JavaScript file.
 5. Generate a Config Map using an `.env` file while noting the differences in key-value pairs handling.
-6. Customize options like disabling name suffix hashes and adding common labels.
+6. Kustomize options like disabling name suffix hashes and adding common labels.
 
 Give it a go and see how much you can implement on your own before diving into the detailed guide! 💪
 
@@ -23,17 +23,17 @@ Give it a go and see how much you can implement on your own before diving into t
    - For example, name it `feature flags config`.
    - Add literals with key-value pairs (e.g., `useDB: true`, `exposeMetrics: true`).
 4. **Generate Config Map**:
-   - Navigate to the terminal and run the command `kubectl customize` while pointing to your dev overlay directory.
+   - Navigate to the terminal and run the command `kubectl kustomize` while pointing to your dev overlay directory.
    - Verify that the Config Map is created with the defined data.
 5. **Add Config Map from a File**:
    - Create an example file (e.g., `DBinit.js`) and configure another entry in your generator to reference the file.
 6. **Working with `.env` Files**:
    - Create a `.env` file and configure another generator to read from it. Observe the generation of key-value pairs versus reading the file directly.
-7. **Customize Global Options**:
+7. **Kustomize Global Options**:
    - Discuss how to disable name suffix hashes globally and how to set common labels for all generated Config Maps.
 8. **Conclusion of the Task**:
    - Ensure you walk through the process, confirm all changes, and rerun the command to view results.
 
 ## Conclusion
 
-In this lecture, we explored the Config Map generator in Kubernetes Customize, learning how to create and manage these configurations from various sources. The ability to generate multiple Config Maps based on different parameters allows for a more dynamic and flexible approach to managing configurations in your applications. Keep practicing these steps, and we’ll continue our journey into the world of Kubernetes! 🚀
+In this lecture, we explored the Config Map generator in Kubernetes Kustomize, learning how to create and manage these configurations from various sources. The ability to generate multiple Config Maps based on different parameters allows for a more dynamic and flexible approach to managing configurations in your applications. Keep practicing these steps, and we’ll continue our journey into the world of Kubernetes! 🚀

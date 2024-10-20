@@ -1,10 +1,10 @@
 # Dynamic Provisioning of Persistent Volumes in Kubernetes
 
-Welcome to our guide on dynamically provisioning persistent volumes using MiniCube! 🚀 In this exercise, we'll dive into the process of creating persistent volumes on-demand, making it easier for us to manage storage in our applications. Before we get into the nitty-gritty of the steps, let's give you a chance to try it out on your own.
+Welcome to our guide on dynamically provisioning persistent volumes using Minikube! 🚀 In this exercise, we'll dive into the process of creating persistent volumes on-demand, making it easier for us to manage storage in our applications. Before we get into the nitty-gritty of the steps, let's give you a chance to try it out on your own.
 
 ## Overview
 
-In this exercise, your main goal is to implement dynamic provisioning of persistent volumes using the `standard` storage class that MiniCube provides by default. Here’s a quick summary of the steps you should try to follow:
+In this exercise, your main goal is to implement dynamic provisioning of persistent volumes using the `standard` storage class that Minikube provides by default. Here’s a quick summary of the steps you should try to follow:
 
 1. Describe the default storage class using `kubectl`.
 2. Create a persistent volume claim (PVC) without specifying a storage class.

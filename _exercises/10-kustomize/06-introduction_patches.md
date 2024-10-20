@@ -38,7 +38,7 @@ Here’s a clear path to follow for achieving the objectives discussed:
    - Ensure you retain the relevant metadata and other specifications as is.
 
 5. **Run and Validate:**
-   - Clear the terminal and re-run your configuration using customize.
+   - Clear the terminal and re-run your configuration using Kustomize.
    - Check the deployment output to confirm that only the NGINX deployment image tag has changed.
 
 ## Conclusion

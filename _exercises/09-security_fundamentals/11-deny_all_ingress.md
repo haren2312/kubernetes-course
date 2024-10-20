@@ -1,12 +1,12 @@
 # Implementing Deny All Ingress in Kubernetes Network Policies
 
-Welcome to our guide on implementing Deny All Ingress Network Policies in Kubernetes! In this exercise, we'll explore how to set up a MiniCube cluster with Calico CNI and configure network policies to restrict incoming traffic to our applications. Before diving into the step-by-step instructions, let's see if you can tackle the challenge yourself! 💪
+Welcome to our guide on implementing Deny All Ingress Network Policies in Kubernetes! In this exercise, we'll explore how to set up a Minikube cluster with Calico CNI and configure network policies to restrict incoming traffic to our applications. Before diving into the step-by-step instructions, let's see if you can tackle the challenge yourself! 💪
 
 ## Overview
 
-In this exercise, your goal is to create a MiniCube cluster using the Calico container network interface (CNI) and establish a network policy that denies all ingress traffic to a given application pod. Here's a quick overview of what you'll need to do:
+In this exercise, your goal is to create a Minikube cluster using the Calico container network interface (CNI) and establish a network policy that denies all ingress traffic to a given application pod. Here's a quick overview of what you'll need to do:
 
-1. Set up a MiniCube cluster with the Calico CNI.
+1. Set up a Minikube cluster with the Calico CNI.
 2. Create a deployment for the Color API application.
 3. Create a service to expose the Color API.
 4. Test connectivity to the Color API from a curl pod.
@@ -17,10 +17,10 @@ Give it a shot before checking out the detailed steps below!
 
 ## Step-by-Step Guide
 
-1. **Create a MiniCube Cluster:**
+1. **Create a Minikube Cluster:**
 
-   - If you have an existing MiniCube cluster, you can either stop or delete it.
-   - Create a new MiniCube cluster using the command: `minikube start --cni=calico --profile=network-policies` to ensure you're using the Calico CNI.
+   - If you have an existing Minikube cluster, you can either stop or delete it.
+   - Create a new Minikube cluster using the command: `minikube start --cni=calico --profile=network-policies` to ensure you're using the Calico CNI.
 
 2. **Verify Pod Status:**
 
