@@ -1,4 +1,4 @@
-# Docker and Kubernetes For Beginners: From Zero to Hero
+# The Complete Docker and Kubernetes Course: From Zero to Hero
 
 This repository is part of my Docker and Kubernetes full course! Check right below for the link with a great discount
 
@@ -19,4 +19,4 @@ Here are a few tips for you to best navigate the contents of this repository:
 
 ## Additional Links:
 
-- Docker Fundamentals repository (also part of the bundle): https://github.com/lm-academy/docker-fundamentals-course
+- Docker Fundamentals repository (also part of the bundle): https://github.com/lm-academy/docker-course
