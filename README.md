@@ -19,4 +19,4 @@ Here are a few tips for you to best navigate the contents of this repository:
 
 ## Additional Links:
 
-- Docker Fundamentals repository (also part of the bundle): https://github.com/lm-academy/docker-course
+- Docker's code repository (also part of the bundle): https://github.com/lm-academy/docker-course
