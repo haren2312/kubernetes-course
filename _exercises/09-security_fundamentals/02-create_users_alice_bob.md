@@ -31,11 +31,11 @@ Here’s a concise guide to help you through the implementation:
    ```
 4. Create a certificate signing request for Alice:
    ```bash
-   openssl req -new -key alice.key -out alice.csr -subj "/CN=Alice/O=admins"
+   openssl req -new -key alice.key -out alice.csr -subj "/CN=alice/O=admin"
    ```
 5. Repeat for Bob:
    ```bash
-   openssl req -new -key bob.key -out bob.csr -subj "/CN=Bob/O=dev"
+   openssl req -new -key bob.key -out bob.csr -subj "/CN=bob/O=dev"
    ```
 6. Open your IDE and create a file named `CSR.yaml`. Add the necessary YAML configuration to define both CSRs, including the signer name and expiration settings.
 7. Apply the CSR file in Kubernetes:

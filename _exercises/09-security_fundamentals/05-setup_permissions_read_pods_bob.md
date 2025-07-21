@@ -88,7 +88,7 @@ Before moving on to the guide, I encourage you to try implementing the solution 
        namespace: dev
      subjects:
        - kind: User
-         name: Bob
+         name: bob
          apiGroup: rbac.authorization.k8s.io
      roleRef:
        kind: Role
